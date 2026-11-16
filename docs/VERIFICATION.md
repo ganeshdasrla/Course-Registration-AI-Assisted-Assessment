@@ -45,3 +45,11 @@ The machine-readable TRX result is retained locally at `.artifacts/TestResults/r
 Reviewed the solution/project/configuration files, library, demo, tests, and documentation. Traced validation before mutations, all collection writes under one lock, capacity derived from enrollment count, duplicate checks before additions, head removal before promotion, and read-only snapshot copying. Confirmed no callbacks or external mutable references escape the lock. Reviewed concurrency tests for scheduler-independent expectations and bounded asynchronous waits.
 
 The separate automated test runner and demo verified behavior outside generation of the source. This is agent self-review plus execution evidence; it does not establish independent human approval, exhaustive thread-interleaving verification, durability, or distributed correctness.
+
+## GitHub publication evidence
+
+The user explicitly requested public publication. Created the public repository at https://github.com/ganeshdasrla/Course-Registration-AI-Assisted-Assessment and pushed branch main. Initial published implementation commit: be8b99ae0292aee38581f755e0ddc99c9504d2fe. A GitHub API read verified that remote main matched the local commit after the push. The existing Git Credential Manager sign-in supplied authentication in memory; no credential was printed, staged, or embedded in the remote URL.
+
+Executed: git init --initial-branch=main; repository-local GitHub noreply author configuration; explicit source/document staging; git diff --cached --check (exit 0); git commit; GitHub repository creation with private=false; git remote add origin; git push --set-upstream origin main (exit 0). Staged-path inspection excluded build outputs, test results, environment files, and local tool/artifact directories. The source credential-pattern scan found no matches. An exact-match local check confirmed that the original prompt was copied verbatim into AI_USAGE.md.
+
+This publication evidence is added in a subsequent documentation commit after the implementation push was verified.
